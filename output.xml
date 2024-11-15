@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.10.12 on linux)" generated="2024-11-15T13:34:36.638988" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/home/mlenni/Documents/ohtu/webcounter/src/tests">
+<suite id="s1-s1" name="Increment" source="/home/mlenni/Documents/ohtu/webcounter/src/tests/increment.robot">
+<kw name="Open And Configure Browser" owner="resource" type="SETUP">
+<if>
+<branch type="IF" condition="$BROWSER == 'chrome'">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-11-15T13:34:36.767042" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7d760750d5a0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-11-15T13:34:36.766748" elapsed="0.000336"/>
+</kw>
+<status status="PASS" start="2024-11-15T13:34:36.763711" elapsed="0.003443"/>
+</branch>
+<branch type="ELSE IF" condition="$BROWSER == 'firefox'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].FirefoxOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-11-15T13:34:36.767312" elapsed="0.000031"/>
+</kw>
+<status status="NOT RUN" start="2024-11-15T13:34:36.767199" elapsed="0.000190"/>
+</branch>
+<status status="PASS" start="2024-11-15T13:34:36.763682" elapsed="0.003736"/>
+</if>
+<if>
+<branch type="IF" condition="$HEADLESS == 'true'">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-11-15T13:34:36.767650" elapsed="0.000181"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-11-15T13:34:36.767940" elapsed="0.000149"/>
+</kw>
+<status status="PASS" start="2024-11-15T13:34:36.767472" elapsed="0.000667"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="NOT RUN" start="2024-11-15T13:34:36.768264" elapsed="0.000026"/>
+</kw>
+<status status="NOT RUN" start="2024-11-15T13:34:36.768175" elapsed="0.000160"/>
+</branch>
+<status status="PASS" start="2024-11-15T13:34:36.767459" elapsed="0.000905"/>
+</if>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-15T13:34:36.768712" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2024-11-15T13:34:38.824387" level="WARN">The chromedriver version (117.0.5857.2) detected in PATH at /usr/local/bin/chromedriver might not be compatible with the detected chrome version (131.0.6778.69); currently, chromedriver 131.0.6778.69 is recommended for chrome 131.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-11-15T13:34:39.334917" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-11-15T13:34:39.335133" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x64d97cbc5e63 &lt;unknown&gt;
+#1 0x64d97c8d9687 &lt;unknown&gt;
+#2 0x64d97c90fceb &lt;unknown&gt;
+#3 0x64d97c90f089 &lt;unknown&gt;
+#4 0x64d97c90a4f4 &lt;unknown&gt;
+#5 0x64d97c906a0a &lt;unknown&gt;
+#6 0x64d97c94941b &lt;unknown&gt;
+#7 0x64d97c948902 &lt;unknown&gt;
+#8 0x64d97c940153 &lt;unknown&gt;
+#9 0x64d97c912f6b &lt;unknown&gt;
+#10 0x64d97c913cfe &lt;unknown&gt;
+#11 0x64d97cb8bcf8 &lt;unknown&gt;
+#12 0x64d97cb8fbc7 &lt;unknown&gt;
+#13 0x64d97cb9a10c &lt;unknown&gt;
+#14 0x64d97cb907f6 &lt;unknown&gt;
+#15 0x64d97cb5d07f &lt;unknown&gt;
+#16 0x64d97cbb4c38 &lt;unknown&gt;
+#17 0x64d97cbb4e09 &lt;unknown&gt;
+#18 0x64d97cbc4593 &lt;unknown&gt;
+#19 0x70ad1ac94ac3 &lt;unknown&gt;
+</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-11-15T13:34:36.768458" elapsed="2.567825">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x64d97cbc5e63 &lt;unknown&gt;
+#1 0x64d97c8d9687 &lt;unknown&gt;
+#2 0x64d97c90fceb &lt;unknown&gt;
+#3 0x64d97c90f089 &lt;unknown&gt;
+#4 0x64d97c90a4f4 &lt;unknown&gt;
+#5 0x64d97c906a0a &lt;unknown&gt;
+#6 0x64d97c94941b &lt;unknown&gt;
+#7 0x64d97c948902 &lt;unknown&gt;
+#8 0x64d97c940153 &lt;unknown&gt;
+#9 0x64d97c912f6b &lt;unknown&gt;
+#10 0x64d97c913cfe &lt;unknown&gt;
+#11 0x64d97cb8bcf8 &lt;unknown&gt;
+#12 0x64d97cb8fbc7 &lt;unknown&gt;
+#13 0x64d97cb9a10c &lt;unknown&gt;
+#14 0x64d97cb907f6 &lt;unknown&gt;
+#15 0x64d97cb5d07f &lt;unknown&gt;
+#16 0x64d97cbb4c38 &lt;unknown&gt;
+#17 0x64d97cbb4e09 &lt;unknown&gt;
+#18 0x64d97cbc4593 &lt;unknown&gt;
+#19 0x70ad1ac94ac3 &lt;unknown&gt;
+</status>
+</kw>
+<status status="FAIL" start="2024-11-15T13:34:36.763461" elapsed="2.573108">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x64d97cbc5e63 &lt;unknown&gt;
+#1 0x64d97c8d9687 &lt;unknown&gt;
+#2 0x64d97c90fceb &lt;unknown&gt;
+#3 0x64d97c90f089 &lt;unknown&gt;
+#4 0x64d97c90a4f4 &lt;unknown&gt;
+#5 0x64d97c906a0a &lt;unknown&gt;
+#6 0x64d97c94941b &lt;unknown&gt;
+#7 0x64d97c948902 &lt;unknown&gt;
+#8 0x64d97c940153 &lt;unknown&gt;
+#9 0x64d97c912f6b &lt;unknown&gt;
+#10 0x64d97c913cfe &lt;unknown&gt;
+#11 0x64d97cb8bcf8 &lt;unknown&gt;
+#12 0x64d97cb8fbc7 &lt;unknown&gt;
+#13 0x64d97cb9a10c &lt;unknown&gt;
+#14 0x64d97cb907f6 &lt;unknown&gt;
+#15 0x64d97cb5d07f &lt;unknown&gt;
+#16 0x64d97cbb4c38 &lt;unknown&gt;
+#17 0x64d97cbb4e09 &lt;unknown&gt;
+#18 0x64d97cbc4593 &lt;unknown&gt;
+#19 0x70ad1ac94ac3 &lt;unknown&gt;
+</status>
+</kw>
+<test id="s1-s1-t1" name="At start the counter is zero" line="7">
+<status status="FAIL" start="2024-11-15T13:34:39.336715" elapsed="0.000424">Parent suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x64d97cbc5e63 &lt;unknown&gt;
+#1 0x64d97c8d9687 &lt;unknown&gt;
+#2 0x64d97c90fceb &lt;unknown&gt;
+#3 0x64d97c90f089 &lt;unknown&gt;
+#4 0x64d97c90a4f4 &lt;unknown&gt;
+#5 0x64d97c906a0a &lt;unknown&gt;
+#6 0x64d97c94941b &lt;unknown&gt;
+#7 0x64d97c948902 &lt;unknown&gt;
+#8 0x64d97c940153 &lt;unknown&gt;
+#9 0x64d97c912f6b &lt;unknown&gt;
+#10 0x64d97c913cfe &lt;unknown&gt;
+#11 0x64d97cb8bcf8 &lt;unknown&gt;
+#12 0x64d97cb8fbc7 &lt;unknown&gt;
+#13 0x64d97cb9a10c &lt;unknown&gt;
+#14 0x64d97cb907f6 &lt;unknown&gt;
+#15 0x64d97cb5d07f &lt;unknown&gt;
+#16 0x64d97cbb4c38 &lt;unknown&gt;
+#17 0x64d97cbb4e09 &lt;unknown&gt;
+#18 0x64d97cbc4593 &lt;unknown&gt;
+#19 0x70ad1ac94ac3 &lt;unknown&gt;
+</status>
+</test>
+<test id="s1-s1-t2" name="When button pressed twice the counter is two" line="12">
+<status status="FAIL" start="2024-11-15T13:34:39.337415" elapsed="0.000305">Parent suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x64d97cbc5e63 &lt;unknown&gt;
+#1 0x64d97c8d9687 &lt;unknown&gt;
+#2 0x64d97c90fceb &lt;unknown&gt;
+#3 0x64d97c90f089 &lt;unknown&gt;
+#4 0x64d97c90a4f4 &lt;unknown&gt;
+#5 0x64d97c906a0a &lt;unknown&gt;
+#6 0x64d97c94941b &lt;unknown&gt;
+#7 0x64d97c948902 &lt;unknown&gt;
+#8 0x64d97c940153 &lt;unknown&gt;
+#9 0x64d97c912f6b &lt;unknown&gt;
+#10 0x64d97c913cfe &lt;unknown&gt;
+#11 0x64d97cb8bcf8 &lt;unknown&gt;
+#12 0x64d97cb8fbc7 &lt;unknown&gt;
+#13 0x64d97cb9a10c &lt;unknown&gt;
+#14 0x64d97cb907f6 &lt;unknown&gt;
+#15 0x64d97cb5d07f &lt;unknown&gt;
+#16 0x64d97cbb4c38 &lt;unknown&gt;
+#17 0x64d97cbb4e09 &lt;unknown&gt;
+#18 0x64d97cbc4593 &lt;unknown&gt;
+#19 0x70ad1ac94ac3 &lt;unknown&gt;
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-15T13:34:39.338349" elapsed="0.000211"/>
+</kw>
+<status status="FAIL" start="2024-11-15T13:34:36.656668" elapsed="2.681947">Suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x64d97cbc5e63 &lt;unknown&gt;
+#1 0x64d97c8d9687 &lt;unknown&gt;
+#2 0x64d97c90fceb &lt;unknown&gt;
+#3 0x64d97c90f089 &lt;unknown&gt;
+#4 0x64d97c90a4f4 &lt;unknown&gt;
+#5 0x64d97c906a0a &lt;unknown&gt;
+#6 0x64d97c94941b &lt;unknown&gt;
+#7 0x64d97c948902 &lt;unknown&gt;
+#8 0x64d97c940153 &lt;unknown&gt;
+#9 0x64d97c912f6b &lt;unknown&gt;
+#10 0x64d97c913cfe &lt;unknown&gt;
+#11 0x64d97cb8bcf8 &lt;unknown&gt;
+#12 0x64d97cb8fbc7 &lt;unknown&gt;
+#13 0x64d97cb9a10c &lt;unknown&gt;
+#14 0x64d97cb907f6 &lt;unknown&gt;
+#15 0x64d97cb5d07f &lt;unknown&gt;
+#16 0x64d97cbb4c38 &lt;unknown&gt;
+#17 0x64d97cbb4e09 &lt;unknown&gt;
+#18 0x64d97cbc4593 &lt;unknown&gt;
+#19 0x70ad1ac94ac3 &lt;unknown&gt;
+</status>
+</suite>
+<suite id="s1-s2" name="Reset" source="/home/mlenni/Documents/ohtu/webcounter/src/tests/reset.robot">
+<kw name="Open And Configure Browser" owner="resource" type="SETUP">
+<if>
+<branch type="IF" condition="$BROWSER == 'chrome'">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-11-15T13:34:39.343365" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7d760787d7e0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-11-15T13:34:39.343088" elapsed="0.000313"/>
+</kw>
+<status status="PASS" start="2024-11-15T13:34:39.342852" elapsed="0.000622"/>
+</branch>
+<branch type="ELSE IF" condition="$BROWSER == 'firefox'">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].FirefoxOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-11-15T13:34:39.343622" elapsed="0.000027"/>
+</kw>
+<status status="NOT RUN" start="2024-11-15T13:34:39.343515" elapsed="0.000183"/>
+</branch>
+<status status="PASS" start="2024-11-15T13:34:39.342830" elapsed="0.000899"/>
+</if>
+<if>
+<branch type="IF" condition="$HEADLESS == 'true'">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-11-15T13:34:39.343958" elapsed="0.000170"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-11-15T13:34:39.344237" elapsed="0.000187"/>
+</kw>
+<status status="PASS" start="2024-11-15T13:34:39.343784" elapsed="0.000694"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="NOT RUN" start="2024-11-15T13:34:39.344603" elapsed="0.000026"/>
+</kw>
+<status status="NOT RUN" start="2024-11-15T13:34:39.344515" elapsed="0.000153"/>
+</branch>
+<status status="PASS" start="2024-11-15T13:34:39.343768" elapsed="0.000927"/>
+</if>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-15T13:34:39.345040" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2024-11-15T13:34:39.417879" level="WARN">The chromedriver version (117.0.5857.2) detected in PATH at /usr/local/bin/chromedriver might not be compatible with the detected chrome version (131.0.6778.69); currently, chromedriver 131.0.6778.69 is recommended for chrome 131.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-11-15T13:34:39.723338" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-11-15T13:34:39.723545" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x617c15229e63 &lt;unknown&gt;
+#1 0x617c14f3d687 &lt;unknown&gt;
+#2 0x617c14f73ceb &lt;unknown&gt;
+#3 0x617c14f73089 &lt;unknown&gt;
+#4 0x617c14f6e4f4 &lt;unknown&gt;
+#5 0x617c14f6aa0a &lt;unknown&gt;
+#6 0x617c14fad41b &lt;unknown&gt;
+#7 0x617c14fac902 &lt;unknown&gt;
+#8 0x617c14fa4153 &lt;unknown&gt;
+#9 0x617c14f76f6b &lt;unknown&gt;
+#10 0x617c14f77cfe &lt;unknown&gt;
+#11 0x617c151efcf8 &lt;unknown&gt;
+#12 0x617c151f3bc7 &lt;unknown&gt;
+#13 0x617c151fe10c &lt;unknown&gt;
+#14 0x617c151f47f6 &lt;unknown&gt;
+#15 0x617c151c107f &lt;unknown&gt;
+#16 0x617c15218c38 &lt;unknown&gt;
+#17 0x617c15218e09 &lt;unknown&gt;
+#18 0x617c15228593 &lt;unknown&gt;
+#19 0x78487be94ac3 &lt;unknown&gt;
+</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-11-15T13:34:39.344792" elapsed="0.378975">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x617c15229e63 &lt;unknown&gt;
+#1 0x617c14f3d687 &lt;unknown&gt;
+#2 0x617c14f73ceb &lt;unknown&gt;
+#3 0x617c14f73089 &lt;unknown&gt;
+#4 0x617c14f6e4f4 &lt;unknown&gt;
+#5 0x617c14f6aa0a &lt;unknown&gt;
+#6 0x617c14fad41b &lt;unknown&gt;
+#7 0x617c14fac902 &lt;unknown&gt;
+#8 0x617c14fa4153 &lt;unknown&gt;
+#9 0x617c14f76f6b &lt;unknown&gt;
+#10 0x617c14f77cfe &lt;unknown&gt;
+#11 0x617c151efcf8 &lt;unknown&gt;
+#12 0x617c151f3bc7 &lt;unknown&gt;
+#13 0x617c151fe10c &lt;unknown&gt;
+#14 0x617c151f47f6 &lt;unknown&gt;
+#15 0x617c151c107f &lt;unknown&gt;
+#16 0x617c15218c38 &lt;unknown&gt;
+#17 0x617c15218e09 &lt;unknown&gt;
+#18 0x617c15228593 &lt;unknown&gt;
+#19 0x78487be94ac3 &lt;unknown&gt;
+</status>
+</kw>
+<status status="FAIL" start="2024-11-15T13:34:39.342669" elapsed="0.381287">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x617c15229e63 &lt;unknown&gt;
+#1 0x617c14f3d687 &lt;unknown&gt;
+#2 0x617c14f73ceb &lt;unknown&gt;
+#3 0x617c14f73089 &lt;unknown&gt;
+#4 0x617c14f6e4f4 &lt;unknown&gt;
+#5 0x617c14f6aa0a &lt;unknown&gt;
+#6 0x617c14fad41b &lt;unknown&gt;
+#7 0x617c14fac902 &lt;unknown&gt;
+#8 0x617c14fa4153 &lt;unknown&gt;
+#9 0x617c14f76f6b &lt;unknown&gt;
+#10 0x617c14f77cfe &lt;unknown&gt;
+#11 0x617c151efcf8 &lt;unknown&gt;
+#12 0x617c151f3bc7 &lt;unknown&gt;
+#13 0x617c151fe10c &lt;unknown&gt;
+#14 0x617c151f47f6 &lt;unknown&gt;
+#15 0x617c151c107f &lt;unknown&gt;
+#16 0x617c15218c38 &lt;unknown&gt;
+#17 0x617c15218e09 &lt;unknown&gt;
+#18 0x617c15228593 &lt;unknown&gt;
+#19 0x78487be94ac3 &lt;unknown&gt;
+</status>
+</kw>
+<test id="s1-s2-t1" name="When counter has a nonzero value and it is reset the value becomes zero" line="7">
+<status status="FAIL" start="2024-11-15T13:34:39.724158" elapsed="0.000571">Parent suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x617c15229e63 &lt;unknown&gt;
+#1 0x617c14f3d687 &lt;unknown&gt;
+#2 0x617c14f73ceb &lt;unknown&gt;
+#3 0x617c14f73089 &lt;unknown&gt;
+#4 0x617c14f6e4f4 &lt;unknown&gt;
+#5 0x617c14f6aa0a &lt;unknown&gt;
+#6 0x617c14fad41b &lt;unknown&gt;
+#7 0x617c14fac902 &lt;unknown&gt;
+#8 0x617c14fa4153 &lt;unknown&gt;
+#9 0x617c14f76f6b &lt;unknown&gt;
+#10 0x617c14f77cfe &lt;unknown&gt;
+#11 0x617c151efcf8 &lt;unknown&gt;
+#12 0x617c151f3bc7 &lt;unknown&gt;
+#13 0x617c151fe10c &lt;unknown&gt;
+#14 0x617c151f47f6 &lt;unknown&gt;
+#15 0x617c151c107f &lt;unknown&gt;
+#16 0x617c15218c38 &lt;unknown&gt;
+#17 0x617c15218e09 &lt;unknown&gt;
+#18 0x617c15228593 &lt;unknown&gt;
+#19 0x78487be94ac3 &lt;unknown&gt;
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-15T13:34:39.725335" elapsed="0.000227"/>
+</kw>
+<status status="FAIL" start="2024-11-15T13:34:39.339138" elapsed="0.386489">Suite setup failed:
+SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 117
+Current browser version is 131.0.6778.69 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x617c15229e63 &lt;unknown&gt;
+#1 0x617c14f3d687 &lt;unknown&gt;
+#2 0x617c14f73ceb &lt;unknown&gt;
+#3 0x617c14f73089 &lt;unknown&gt;
+#4 0x617c14f6e4f4 &lt;unknown&gt;
+#5 0x617c14f6aa0a &lt;unknown&gt;
+#6 0x617c14fad41b &lt;unknown&gt;
+#7 0x617c14fac902 &lt;unknown&gt;
+#8 0x617c14fa4153 &lt;unknown&gt;
+#9 0x617c14f76f6b &lt;unknown&gt;
+#10 0x617c14f77cfe &lt;unknown&gt;
+#11 0x617c151efcf8 &lt;unknown&gt;
+#12 0x617c151f3bc7 &lt;unknown&gt;
+#13 0x617c151fe10c &lt;unknown&gt;
+#14 0x617c151f47f6 &lt;unknown&gt;
+#15 0x617c151c107f &lt;unknown&gt;
+#16 0x617c15218c38 &lt;unknown&gt;
+#17 0x617c15218e09 &lt;unknown&gt;
+#18 0x617c15228593 &lt;unknown&gt;
+#19 0x78487be94ac3 &lt;unknown&gt;
+</status>
+</suite>
+<status status="FAIL" start="2024-11-15T13:34:36.639872" elapsed="3.086569"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1" name="Increment">Tests.Increment</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="Reset">Tests.Reset</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-11-15T13:34:38.824387" level="WARN">The chromedriver version (117.0.5857.2) detected in PATH at /usr/local/bin/chromedriver might not be compatible with the detected chrome version (131.0.6778.69); currently, chromedriver 131.0.6778.69 is recommended for chrome 131.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-11-15T13:34:39.417879" level="WARN">The chromedriver version (117.0.5857.2) detected in PATH at /usr/local/bin/chromedriver might not be compatible with the detected chrome version (131.0.6778.69); currently, chromedriver 131.0.6778.69 is recommended for chrome 131.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

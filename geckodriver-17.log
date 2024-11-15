@@ -1,0 +1,47 @@
+1731670109057	geckodriver	INFO	Listening on 127.0.0.1:53945
+1731670109078	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "57581" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileT3pmdv"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:29.461: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:29.595: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+1731670109867	Marionette	INFO	Marionette enabled
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:29.997: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+1731670110057	Marionette	INFO	Listening on port 36801
+WebDriver BiDi listening on ws://127.0.0.1:57581
+Read port: 36801
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:30.123: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:30.207: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+1731670110374	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:30.474: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:30.475: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:30.487: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:30.488: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:30.488: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+[Parent 746428, Main Thread] WARNING: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:746428): Gdk-CRITICAL **: 13:28:30.512: gdk_wayland_window_set_dbus_properties_libgtk_only: assertion 'GDK_IS_WAYLAND_WINDOW (window)' failed
+console.error: ({})
+DevTools listening on ws://127.0.0.1:57581/devtools/browser/2d34c876-caf3-4b5d-b124-ee057e919f4f
+1731670111546	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1731670112250	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'interactive'.
+1731670112904	Marionette	INFO	Stopped listening on port 36801
